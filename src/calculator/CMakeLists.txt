@@ -8,3 +8,6 @@ target_include_directories(runTestCalculator PRIVATE ${GTEST_INCLUDE_DIRS} inclu
 target_link_libraries(runTestCalculator ${GTEST_LIBRARIES} pthread calculator)
 
 add_test(testCalculator runTestCalculator)
+
+export(TARGETS calculator NAMESPACE ${PROJECT_NAME}:: FILE calculatorConfig.cmake)
+export(PACKAGE calculator)
